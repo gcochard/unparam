@@ -1,4 +1,4 @@
-module.exports = function(){
+module.exports = function(arg){
     'use strict';
-    arguments = arguments || [];
+    arg = arg || false;
 };
