@@ -5,10 +5,10 @@ Unused parameter module for node.js
 
 Usage:
 ```
-var unparam = require('unparam');
+var unused = require('unparam');
 ...
 function(arg1,arg2){
-        unparam(arg1);
+        unused(arg1);
             do_something(arg2);
 }
 ```
