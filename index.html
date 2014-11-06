@@ -28,22 +28,58 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="unparam" class="anchor" href="#unparam"><span class="octicon octicon-link"></span></a>Unparam</h3>
+        <h1>
+<a id="unparam--" class="anchor" href="#unparam--" aria-hidden="true"><span class="octicon octicon-link"></span></a>unparam <a href="https://travis-ci.org/gcochard/unparam"><img src="https://travis-ci.org/gcochard/unparam.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/gcochard/unparam"><img src="https://coveralls.io/repos/gcochard/unparam/badge.png" alt="Coverage Status"></a>
+</h1>
 
-<p>This node module allows you to call out unused parameters explicitly. It is great for self-documenting code, and it silences jslint's unparam warning.</p>
+<p>Unused parameter module for node.js</p>
 
-<p>Usage:</p>
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<pre><code>var unused = require('unparam');
-...
-function(arg1,arg2){
+<div class="highlight highlight-js"><pre><span class="k">var</span> unused <span class="o">=</span> <span class="nf">require</span>(<span class="s1">'unparam'</span>);
+
+<span class="kt">function</span>(<span class="nv">arg1</span>,<span class="nv">arg2</span>){
     unused(arg1);
-    do_something_with(arg2);
-}
-</code></pre>
+    do_something(arg2);
+}</pre></div>
 
 <p>It's that easy!</p>
+
+<h2>
+<a id="advanced-usage" class="anchor" href="#advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced usage</h2>
+
+<p>If you want to track all of your unused parameters, set the <code>UNPARAM_TRACE</code> environment variable. This will turn on tracking of each call, and will generate a report with line numbers, filenames, columns, (optionally source lines) and a total count of unused parameters. If you want the actual call to unparam to show up in the report, set the <code>UNPARAM_READ_FILE</code> environment variable. If you don't want the report to write to stdout, set the <code>UNPARAM_WRITE_FILE</code> environment variable.</p>
+
+<div class="highlight highlight-bash"><pre>$ UNPARAM_TRACE=<span class="nf">true</span> UNPARAM_READ_FILE=<span class="nf">true</span> node app.js
+{ <span class="s1">'/path/to/file.js'</span>: 
+   [ { column: 5,
+       lineNumber: 6,
+       filename: <span class="s1">'/path/to/file.js'</span> } ] }
+$</pre></div>
+
+<div class="highlight highlight-bash"><pre>$ UNPARAM_TRACE=<span class="nf">true</span> UNPARAM_READ_FILE=<span class="nf">true</span> UNPARAM_WRITE_FILE=report.json node app.js
+$ cat report.json
+]
+   {<span class="s2">"column"</span>:5,<span class="s2">"lineNumber"</span>:6,<span class="s2">"filename"</span>:<span class="s2">"/Users/gcochard/unparam/test/function.js"</span>}
+]
+$</pre></div>
+
+<h2>
+<a id="super-ultra-advanced-usage" class="anchor" href="#super-ultra-advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Super ultra advanced usage</h2>
+
+<p>If you want to have multiple reports or different types of behavior based on the file/module/etc, don't bother with environment variables. The function that <code>unparam</code> exports is also a constructor! Call it with <code>new</code> and pass in your options like so:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="k">var</span> path <span class="o">=</span> <span class="nf">require</span>(<span class="s1">'path'</span>)
+<span class="k">var</span> Unparam <span class="o">=</span> <span class="nf">require</span>(<span class="s1">'unparam'</span>);
+<span class="k">var</span> unused1 <span class="o">=</span> <span class="o">new</span> <span class="nc">Unparam</span>({trace<span class="o">:</span><span class="kc">true</span>,readFile<span class="o">:</span><span class="kc">true</span>,writeFile<span class="o">:</span>path.<span class="nf">join</span>(<span class="nv">__dirname</span>,<span class="s1">'report1.json'</span>)});
+<span class="k">var</span> unused2 <span class="o">=</span> <span class="o">new</span> <span class="nc">Unparam</span>({trace<span class="o">:</span><span class="kc">true</span>,readFile<span class="o">:</span><span class="kc">false</span>,writeFile<span class="o">:</span>path.<span class="nf">join</span>(<span class="nv">__dirname</span>,<span class="s1">'report2.json'</span>)});
+
+<span class="kt">function</span>(<span class="nv">arg1</span>,<span class="nv">arg2</span>,<span class="nv">arg3</span>){
+    unused1(arg1);
+    unused2(arg2);
+    do_something(arg3);
+}</pre></div>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/gcochard">gcochard</a></p>
