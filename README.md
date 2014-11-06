@@ -1,6 +1,7 @@
 # unparam [![Build Status](https://travis-ci.org/gcochard/unparam.svg?branch=master)](https://travis-ci.org/gcochard/unparam) [![Coverage Status](https://coveralls.io/repos/gcochard/unparam/badge.png)](https://coveralls.io/r/gcochard/unparam)
+[![NPM](https://nodei.co/npm/unparam.png?compact=true)](https://nodei.co/npm/unparam/)
 
-Unused parameter module for node.js
+Easily ignore (or track) unused parameters, variables, functions, etc. Just call unparam with them!
 
 ## Usage
 ```js
