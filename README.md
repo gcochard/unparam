@@ -1,4 +1,4 @@
-# unparam
+# unparam [![Build Status](https://travis-ci.org/gcochard/unparam.svg?branch=master)](https://travis-ci.org/gcochard/unparam) [![Coverage Status](https://coveralls.io/repos/gcochard/unparam/badge.png)](https://coveralls.io/r/gcochard/unparam)
 
 Unused parameter module for node.js
 
