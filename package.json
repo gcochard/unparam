@@ -23,6 +23,9 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
+    "grunt": "^0.4.5",
+    "grunt-github-pages": "0.0.4",
+    "grunt-jsdoc": "^0.5.7",
     "istanbul": "^0.3.2",
     "jsdoc": "^3.3.0-alpha10",
     "lodash": "^2.4.1",
