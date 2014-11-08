@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+  - "0.8"
+  - "0.10"
+  - "0.11"
+
+matrix:
+    allow_failures:
+        - node_js: "0.8"
+        - node_js: "0.11"
+
+branches:
+    except:
+        - gh-pages
+        - /^v[0-9]/
+
+before_install:
+    - if [[ `node --version` == *v0.8* ]]; then npm install -g npm; fi
+
+after_script:
+    - if [[ `node --version` == *v0.10* ]]; then cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js; fi

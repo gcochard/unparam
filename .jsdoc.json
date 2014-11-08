@@ -1,0 +1,8 @@
+{
+    "opts": {
+        "destination": "./gh-pages/"
+    },
+    "source": {
+        "include": ["app.js","lib/unparam.js","README.md"]
+    }
+}
