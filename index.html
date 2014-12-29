@@ -1,107 +1,98 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Unparam by gcochard</title>
+    <title>JSDoc: Index</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Unparam</h1>
-        <p>Unused parameter module for node.js</p>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
 
-        <p class="view"><a href="https://github.com/gcochard/unparam">View the Project on GitHub <small>gcochard/unparam</small></a></p>
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Index</h1>
+
+    
 
 
-        <ul>
-          <li><a href="https://github.com/gcochard/unparam/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/gcochard/unparam/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/gcochard/unparam">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a id="unparam--" class="anchor" href="#unparam--" aria-hidden="true"><span class="octicon octicon-link"></span></a>unparam <a href="https://travis-ci.org/gcochard/unparam"><img src="https://travis-ci.org/gcochard/unparam.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/gcochard/unparam"><img src="https://coveralls.io/repos/gcochard/unparam/badge.png" alt="Coverage Status"></a>
-</h1>
 
-<p><a href="https://nodei.co/npm/unparam/"><img src="https://nodei.co/npm/unparam.png?compact=true" alt="NPM"></a></p>
+    
 
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>unparam <a href="https://travis-ci.org/gcochard/unparam"><img src="https://travis-ci.org/gcochard/unparam.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/gcochard/unparam"><img src="https://coveralls.io/repos/gcochard/unparam/badge.png" alt="Coverage Status"></a></h1><p><a href="https://nodei.co/npm/unparam/"><img src="https://nodei.co/npm/unparam.png?compact=true" alt="NPM"></a></p>
 <p>Easily ignore (or track) unused parameters, variables, functions, etc. Just call unparam with them!</p>
+<h2>Usage</h2><pre class="prettyprint source lang-js"><code>var unused = require('unparam');
 
-<p><a href="coverage/lcov-report/index.html">Code Coverage</a></p>
-<p><a href="jsdoc/index.html">API Docs</a></p>
-
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
-
-<div class="highlight highlight-js"><pre><span class="k">var</span> unused <span class="o">=</span> <span class="nf">require</span>(<span class="s1">'unparam'</span>);
-
-<span class="kt">function</span>(<span class="nv">arg1</span>,<span class="nv">arg2</span>){
+function(arg1,arg2){
     unused(arg1);
     do_something(arg2);
-}</pre></div>
-
-<p>It's that easy!</p>
-
-<h2>
-<a id="advanced-usage" class="anchor" href="#advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced usage</h2>
-
-<p>If you want to track all of your unused parameters, set the <code>UNPARAM_TRACE</code> environment variable. This will turn on tracking of each call, and will generate a report with line numbers, filenames, columns, (optionally source lines) and a total count of unused parameters. If you want the actual call to unparam to show up in the report, set the <code>UNPARAM_READ_FILE</code> environment variable. If you don't want the report to write to stdout, set the <code>UNPARAM_WRITE_FILE</code> environment variable.</p>
-
-<div class="highlight highlight-bash"><pre>$ UNPARAM_TRACE=<span class="nf">true</span> UNPARAM_READ_FILE=<span class="nf">true</span> node app.js
-{ <span class="s1">'/path/to/file.js'</span>: 
+}</code></pre><p>It's that easy!</p>
+<h2>Advanced usage</h2><p>If you want to track all of your unused parameters, set the <code>UNPARAM_TRACE</code> environment variable. This will turn on tracking of each call, and will generate a report with line numbers, filenames, columns, (optionally source lines) and a total count of unused parameters. If you want the actual call to unparam to show up in the report, set the <code>UNPARAM_READ_FILE</code> environment variable. If you don't want the report to write to stdout, set the <code>UNPARAM_WRITE_FILE</code> environment variable.</p>
+<pre class="prettyprint source lang-bash"><code>$ UNPARAM_TRACE=true UNPARAM_READ_FILE=true node app.js
+{ '/path/to/file.js': 
    [ { column: 5,
        lineNumber: 6,
-       filename: <span class="s1">'/path/to/file.js'</span> } ] }
-$</pre></div>
-
-<div class="highlight highlight-bash"><pre>$ UNPARAM_TRACE=<span class="nf">true</span> UNPARAM_READ_FILE=<span class="nf">true</span> UNPARAM_WRITE_FILE=report.json node app.js
+       filename: '/path/to/file.js' } ] }
+$</code></pre><pre class="prettyprint source lang-bash"><code>$ UNPARAM_TRACE=true UNPARAM_READ_FILE=true UNPARAM_WRITE_FILE=report.json node app.js
 $ cat report.json
 ]
-   {<span class="s2">"column"</span>:5,<span class="s2">"lineNumber"</span>:6,<span class="s2">"filename"</span>:<span class="s2">"/Users/gcochard/unparam/test/function.js"</span>}
+   {&quot;column&quot;:5,&quot;lineNumber&quot;:6,&quot;filename&quot;:&quot;/Users/gcochard/unparam/test/function.js&quot;}
 ]
-$</pre></div>
+$</code></pre><h2>Super ultra advanced usage</h2><p>If you want to have multiple reports or different types of behavior based on the file/module/etc, don't bother with environment variables. The function that <code>unparam</code> exports is also a constructor! Call it with <code>new</code> and pass in your options like so:</p>
+<pre class="prettyprint source lang-javascript"><code>var path = require('path')
+var Unparam = require('unparam');
+var unused1 = new Unparam({trace:true,readFile:true,writeFile:path.join(__dirname,'report1.json')});
+var unused2 = new Unparam({trace:true,readFile:false,writeFile:path.join(__dirname,'report2.json')});
 
-<h2>
-<a id="super-ultra-advanced-usage" class="anchor" href="#super-ultra-advanced-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Super ultra advanced usage</h2>
-
-<p>If you want to have multiple reports or different types of behavior based on the file/module/etc, don't bother with environment variables. The function that <code>unparam</code> exports is also a constructor! Call it with <code>new</code> and pass in your options like so:</p>
-
-<div class="highlight highlight-javascript"><pre><span class="k">var</span> path <span class="o">=</span> <span class="nf">require</span>(<span class="s1">'path'</span>)
-<span class="k">var</span> Unparam <span class="o">=</span> <span class="nf">require</span>(<span class="s1">'unparam'</span>);
-<span class="k">var</span> unused1 <span class="o">=</span> <span class="o">new</span> <span class="nc">Unparam</span>({trace<span class="o">:</span><span class="kc">true</span>,readFile<span class="o">:</span><span class="kc">true</span>,writeFile<span class="o">:</span>path.<span class="nf">join</span>(<span class="nv">__dirname</span>,<span class="s1">'report1.json'</span>)});
-<span class="k">var</span> unused2 <span class="o">=</span> <span class="o">new</span> <span class="nc">Unparam</span>({trace<span class="o">:</span><span class="kc">true</span>,readFile<span class="o">:</span><span class="kc">false</span>,writeFile<span class="o">:</span>path.<span class="nf">join</span>(<span class="nv">__dirname</span>,<span class="s1">'report2.json'</span>)});
-
-<span class="kt">function</span>(<span class="nv">arg1</span>,<span class="nv">arg2</span>,<span class="nv">arg3</span>){
+function(arg1,arg2,arg3){
     unused1(arg1);
     unused2(arg2);
     do_something(arg3);
-}</pre></div>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/gcochard">gcochard</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-54082187-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+}</code></pre></article>
+    </section>
 
-  </body>
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-unparam.html">unparam</a></li></ul><h3>Classes</h3><ul><li><a href="module-unparam-JsonWriter.html">JsonWriter</a></li><li><a href="module-unparam-Unparam.html">Unparam</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha10</a> on Mon Dec 29 2014 10:32:02 GMT-0800 (PST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
 </html>
