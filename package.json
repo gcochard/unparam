@@ -7,7 +7,7 @@
   "homepage": "http://gcochard.github.io/unparam/",
   "name": "unparam",
   "description": "Node module used to explicitly silence jslint's unparam warnings",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/gcochard/unparam"
