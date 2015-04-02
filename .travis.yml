@@ -10,11 +10,8 @@ branches:
         - gh-pages
         - /^v[0-9]/
 
-before_install:
-    - if [[ `node --version` == *v0.8* ]]; then npm install -g npm; fi
-
 after_script:
-    - if [[ `node --version` == *v0.10* ]]; then cat ./gh-pages/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js; fi
+    - if [[ `node --version` == *v0.12* ]]; then cat ./gh-pages/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js; fi
 
 sudo: false
 cache:
